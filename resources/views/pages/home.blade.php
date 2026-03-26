@@ -422,11 +422,11 @@
     </div>
 
     {{-- Row 1: left-to-right --}}
-    <div class="mb-4 overflow-hidden group/gallery">
-        <div class="flex gap-4 animate-marquee group-hover/gallery:[animation-play-state:paused]">
+    <div class="mb-3 md:mb-4 overflow-hidden group/gallery">
+        <div class="flex gap-3 md:gap-4 animate-marquee group-hover/gallery:[animation-play-state:paused]">
             @for($dup = 0; $dup < 2; $dup++)
                 @foreach(range(3, 14) as $img)
-                    <div class="flex-shrink-0 w-80 h-60 rounded-2xl overflow-hidden relative group/item">
+                    <div class="flex-shrink-0 w-56 h-40 md:w-80 md:h-60 rounded-xl md:rounded-2xl overflow-hidden relative group/item">
                         <img src="{{ asset('images/gallery/img' . $img . '.jpeg') }}" alt="Galerie UAC" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-700" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
                     </div>
@@ -437,10 +437,10 @@
 
     {{-- Row 2: right-to-left --}}
     <div class="overflow-hidden group/gallery2">
-        <div class="flex gap-4 animate-marquee direction-reverse group-hover/gallery2:[animation-play-state:paused]" style="animation-direction: reverse;">
+        <div class="flex gap-3 md:gap-4 animate-marquee direction-reverse group-hover/gallery2:[animation-play-state:paused]" style="animation-direction: reverse;">
             @for($dup = 0; $dup < 2; $dup++)
                 @foreach(range(15, 26) as $img)
-                    <div class="flex-shrink-0 w-72 h-52 rounded-2xl overflow-hidden relative group/item">
+                    <div class="flex-shrink-0 w-48 h-36 md:w-72 md:h-52 rounded-xl md:rounded-2xl overflow-hidden relative group/item">
                         <img src="{{ asset('images/gallery/img' . $img . '.jpeg') }}" alt="Galerie UAC" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-700" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
                     </div>
