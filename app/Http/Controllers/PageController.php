@@ -43,6 +43,11 @@ class PageController extends Controller
         return view('pages.poles.hydrocarbures');
     }
 
+    public function poleHuilerie()
+    {
+        return view('pages.poles.huilerie');
+    }
+
     public function carrieres()
     {
         $offers = JobOffer::active()->latest()->get();

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth" data-theme="{{ $siteTheme ?? 'green' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,18 @@
     <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900" rel="stylesheet" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @if(($siteTheme ?? 'green') === 'brown')
+    <style>
+        /* Brown theme: override all hardcoded green hero backgrounds */
+        [class*="bg-[#0D3B12]"] { background-color: #3E2723 !important; }
+        [class*="from-[#0D3B12]"] { --tw-gradient-from: #3E2723 !important; }
+        [class*="via-[#1B5E20]"] { --tw-gradient-via: #795548 !important; }
+        [class*="to-[#0D3B12]"] { --tw-gradient-to: #3E2723 !important; }
+        /* Override radial green tints */
+        [class*="bg-emerald-"], [class*="text-emerald-"] { /* keep pole-specific colors */ }
+    </style>
+    @endif
 </head>
 <body class="font-sans antialiased bg-white text-gray-800" x-data="{ mobileMenu: false }">
 
@@ -23,11 +35,8 @@
             <div class="flex items-center justify-between h-20">
                 {{-- Logo --}}
                 <a href="{{ route('home') }}" class="flex items-center space-x-3 group">
-                    <img src="{{ asset('images/logo.jpeg') }}" alt="UAC-IOD" class="h-12 w-12 rounded-lg object-cover shadow-md group-hover:shadow-lg transition-shadow duration-300">
-                    <div>
-                        <span class="text-xl font-bold transition-colors duration-300" :class="scrolled ? 'text-primary' : 'text-white'">UAC-IOD</span>
-                        <span class="block text-xs transition-colors duration-300" :class="scrolled ? 'text-gray-500' : 'text-white/70'">Groupe Industriel</span>
-                    </div>
+                    <img src="{{ asset('images/logo.jpeg') }}" alt="UAC-IOD" class="h-14 w-auto max-w-[140px] object-contain rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <span class="block text-xs font-medium transition-colors duration-300" :class="scrolled ? 'text-gray-500' : 'text-white/70'">Groupe Industriel</span>
                 </a>
 
                 {{-- Desktop Navigation --}}
@@ -105,17 +114,17 @@
     <footer class="bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {{-- Main Footer --}}
-            <div class="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 text-center sm:text-left">
                 {{-- Brand --}}
-                <div class="lg:col-span-1">
-                    <a href="{{ route('home') }}" class="flex items-center space-x-3 mb-6">
+                <div class="lg:col-span-1 flex flex-col items-center sm:items-start">
+                    <a href="{{ route('home') }}" class="flex items-center space-x-3 mb-4 sm:mb-6">
                         <img src="{{ asset('images/logo.jpeg') }}" alt="UAC-IOD" class="h-12 w-12 rounded-lg object-cover">
                         <span class="text-xl font-bold text-white">UAC-IOD</span>
                     </a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">
                         Groupe industriel multisectoriel engagé dans le développement stratégique du Mali.
                     </p>
-                    <div class="flex space-x-3">
+                    <div class="flex space-x-3 justify-center sm:justify-start">
                         <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-accent hover:text-primary-dark flex items-center justify-center transition-all duration-300">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </a>
@@ -145,6 +154,7 @@
                         <li><a href="{{ route('poles.transport') }}" class="text-gray-400 hover:text-accent transition-colors duration-200 text-sm">Transport & Logistique</a></li>
                         <li><a href="{{ route('poles.vehicules') }}" class="text-gray-400 hover:text-accent transition-colors duration-200 text-sm">Vente de Véhicules</a></li>
                         <li><a href="{{ route('poles.hydrocarbures') }}" class="text-gray-400 hover:text-accent transition-colors duration-200 text-sm">Hydrocarbures</a></li>
+                        <li><a href="{{ route('poles.huilerie') }}" class="text-gray-400 hover:text-accent transition-colors duration-200 text-sm">Huilerie</a></li>
                     </ul>
                 </div>
 
@@ -152,26 +162,26 @@
                 <div>
                     <h4 class="text-white font-semibold mb-6">Contact</h4>
                     <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            <span class="text-gray-400 text-sm">Zone Industrielle, Banancoro – Bamako, Route de Sikasso</span>
+                        <li class="flex items-start sm:items-start flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 items-center sm:text-left text-center">
+                            <svg class="w-5 h-5 text-accent mt-0.5 shrink-0 mx-auto sm:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span class="text-gray-400 text-sm block">Zone Industrielle, Banancoro – Bamako, Route de Sikasso</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            <span class="text-gray-400 text-sm">70 91 12 62 / 76 36 08 12</span>
+                        <li class="flex items-center flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 items-center sm:text-left text-center">
+                            <svg class="w-5 h-5 text-accent shrink-0 mx-auto sm:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span class="text-gray-400 text-sm block">70 91 12 62 / 76 36 08 12</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            <span class="text-gray-400 text-sm">uac.aliment@gmail.com</span>
+                        <li class="flex items-center flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 items-center sm:text-left text-center">
+                            <svg class="w-5 h-5 text-accent shrink-0 mx-auto sm:mx-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <span class="text-gray-400 text-sm block">uac.aliment@gmail.com</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
             {{-- Bottom Bar --}}
-            <div class="border-t border-white/10 py-6 flex flex-col md:flex-row items-center justify-between">
-                <p class="text-gray-500 text-sm">&copy; {{ date('Y') }} UAC-IOD Groupe. Tous droits réservés.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
+            <div class="border-t border-white/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-sm text-center sm:text-left">&copy; {{ date('Y') }} UAC-IOD Groupe. Tous droits réservés.</p>
+                <div class="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6">
                     <a href="#" class="text-gray-500 hover:text-accent text-sm transition-colors">Mentions légales</a>
                     <a href="#" class="text-gray-500 hover:text-accent text-sm transition-colors">Politique de confidentialité</a>
                 </div>

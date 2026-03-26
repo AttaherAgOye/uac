@@ -12,6 +12,8 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\Width;
+use Filament\View\PanelsRenderHook;
+use Illuminate\Support\HtmlString;
 use Filament\Widgets\AccountWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -24,6 +26,17 @@ class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
+        $primaryColor = Color::Emerald;
+        
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('settings')) {
+                $theme = \App\Models\Setting::getTheme();
+                if ($theme === 'brown') {
+                    $primaryColor = \Filament\Support\Colors\Color::hex('#5D4037');
+                }
+            }
+        } catch (\Throwable $e) {}
+
         return $panel
             ->default()
             ->id('admin')
@@ -38,7 +51,7 @@ class AdminPanelProvider extends PanelProvider
                 'danger' => Color::Rose,
                 'gray' => Color::Zinc,
                 'info' => Color::Blue,
-                'primary' => Color::Emerald,
+                'primary' => $primaryColor,
                 'success' => Color::Emerald,
                 'warning' => Color::Amber,
             ])
@@ -52,6 +65,35 @@ class AdminPanelProvider extends PanelProvider
                 AdminOverview::class,
                 AccountWidget::class,
             ])
+            ->renderHook(
+                PanelsRenderHook::HEAD_END,
+                fn (): string => (function () {
+                    $theme = 'green';
+                    try {
+                        if (\Illuminate\Support\Facades\Schema::hasTable('settings')) {
+                            $theme = \App\Models\Setting::getTheme();
+                        }
+                    } catch (\Throwable $e) {}
+
+                    if ($theme === 'brown') {
+                        return new HtmlString('
+                            <style>
+                                :root {
+                                    --uac-admin-sidebar: linear-gradient(180deg, #3E2723 0%, #4E342E 52%, #5D4037 100%);
+                                    --uac-admin-accent: linear-gradient(135deg, #5D4037 0%, #795548 55%, #f9a825 100%);
+                                }
+                                body {
+                                    background:
+                                        radial-gradient(circle at top left, rgba(93, 64, 55, 0.12), transparent 32%),
+                                        radial-gradient(circle at bottom right, rgba(249, 168, 37, 0.12), transparent 28%),
+                                        var(--uac-admin-bg);
+                                }
+                            </style>
+                        ');
+                    }
+                    return new HtmlString('');
+                })()
+            )
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

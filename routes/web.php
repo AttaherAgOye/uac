@@ -11,6 +11,7 @@ Route::get('/poles-activites/nutrition-animale', [PageController::class, 'poleNu
 Route::get('/poles-activites/transport-logistique', [PageController::class, 'poleTransport'])->name('poles.transport');
 Route::get('/poles-activites/vente-vehicules', [PageController::class, 'poleVehicules'])->name('poles.vehicules');
 Route::get('/poles-activites/hydrocarbures', [PageController::class, 'poleHydrocarbures'])->name('poles.hydrocarbures');
+Route::get('/poles-activites/huilerie', [PageController::class, 'poleHuilerie'])->name('poles.huilerie');
 Route::get('/carrieres', [PageController::class, 'carrieres'])->name('carrieres');
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/blog/{slug}', [PageController::class, 'blogShow'])->name('blog.show');

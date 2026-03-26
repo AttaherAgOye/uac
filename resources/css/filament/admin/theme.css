@@ -50,6 +50,12 @@ body {
     letter-spacing: -0.02em;
 }
 
+.fi-sidebar-item-label,
+.fi-sidebar-group-label,
+.fi-sidebar-item-icon {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
 .fi-sidebar-item-btn,
 .fi-topbar-item-btn {
     border-radius: 1rem;

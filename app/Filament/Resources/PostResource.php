@@ -16,7 +16,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Set;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Resources\Resource;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -64,6 +64,7 @@ class PostResource extends Resource
                 FileUpload::make('image')
                     ->label('Image')
                     ->image()
+                    ->disk('public')
                     ->directory('posts')
                     ->maxSize(2048),
                 Select::make('category')

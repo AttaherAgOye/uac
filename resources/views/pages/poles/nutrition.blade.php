@@ -7,34 +7,53 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- HERO --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section class="relative pt-36 pb-24 overflow-hidden" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
-    <div class="absolute inset-0">
-        <img src="{{ asset('images/pages/img4.jpeg') }}" alt="Nutrition Animale" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/95 via-emerald-800/85 to-emerald-900/90"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(249,168,37,0.12),_transparent_60%)]"></div>
+<section class="relative pt-36 pb-56 lg:pt-48 lg:pb-80 overflow-hidden" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
+    {{-- Background image + multi-layer gradient --}}
+    <div class="absolute inset-0 bg-[#0D3B12]">
+        <img src="{{ asset('images/pages/img4.jpeg') }}" alt="Nutrition Animale" class="w-full h-full object-cover opacity-50 mix-blend-luminosity">
+        {{-- Garantir la présence du vert avec des opacités explicites et un mélange --}}
+        <div class="absolute inset-0 bg-gradient-to-br from-[#0D3B12]/90 via-[#1B5E20]/70 to-[#0D3B12]/80 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(249,168,37,0.12),_transparent_60%)]"></div>
     </div>
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-16 right-[10%] w-64 h-64 bg-accent/8 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-20 left-[5%] w-48 h-48 bg-white/5 rounded-full blur-2xl animate-float-reverse"></div>
+    
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 translate-y-[2px]">
+        <svg class="relative block w-full h-[30px] sm:h-[50px] md:h-[80px] lg:h-[120px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C52.16,93.81,104.3,88.4,156.4,79.52c55.3-9.4,110.6-21.4,165-23.08Z" fill="#ffffff"></path>
+        </svg>
     </div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <a href="{{ route('poles') }}" class="group inline-flex items-center gap-2 text-white/50 hover:text-white text-sm mb-8 transition-colors"
+
+    {{-- Floating decorative shapes --}}
+    <div class="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
+        <div class="absolute top-16 right-[10%] w-64 h-64 bg-accent/15 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 left-[5%] w-48 h-48 bg-white/10 rounded-full blur-2xl animate-float-reverse"></div>
+        {{-- Dotted pattern --}}
+        <div class="absolute top-1/4 right-[25%] grid grid-cols-4 gap-3 opacity-30">
+            @for($i = 0; $i < 12; $i++)
+                <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+            @endfor
+        </div>
+    </div>
+
+    {{-- Content --}}
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 sm:mt-0">
+        <a href="{{ route('poles') }}" class="group inline-flex items-center gap-2 text-white/70 hover:text-white text-sm mb-6 sm:mb-8 transition-colors"
            :class="['transition-all duration-500', loaded ? 'opacity-100' : 'opacity-0']">
             <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
             Retour aux pôles
         </a>
         <div class="max-w-3xl">
             <div :class="['transition-all duration-700', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6']">
-                <span class="inline-flex items-center gap-2 px-5 py-2 glass rounded-full text-sm font-medium text-white/90 mb-6">
-                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                <span class="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 glass rounded-full text-[11px] sm:text-sm font-medium text-white/90 mb-4 sm:mb-6">
+                    <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-accent animate-pulse"></span>
                     Pôle 1 — Bu Duman
                 </span>
             </div>
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight"
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight tracking-tight"
                 :class="['transition-all duration-700 delay-150', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
                 Nutrition <span class="text-accent">Animale</span>
             </h1>
-            <p class="text-xl text-white/60 max-w-2xl leading-relaxed"
+            <p class="text-lg sm:text-xl text-white/80 max-w-2xl leading-relaxed"
                :class="['transition-all duration-700 delay-300', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
                 Production industrielle d'aliments complets et sécurisés. Usine d'Aliments Complets (UAC) avec laboratoire intégré.
             </p>
@@ -62,9 +81,15 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- GAMME VOLAILLE --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section id="volaille" class="py-24 bg-white relative overflow-hidden">
+<section id="volaille" class="py-16 sm:py-20 lg:py-28 bg-white relative overflow-hidden">
     <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-50 rounded-full blur-[120px] -translate-y-1/2"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {{-- Floating modern shapes --}}
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-[5%] w-64 h-64 bg-emerald-100/30 rounded-full blur-3xl animate-float"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16" x-data="{ v: false }" x-intersect:enter="v = true"
              :class="['transition-all duration-700', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
             <span class="inline-flex items-center gap-2 text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-4">
@@ -121,9 +146,15 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- GAMME BÉTAIL --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section id="betail" class="py-24 bg-gray-50 relative overflow-hidden">
+<section id="betail" class="py-16 sm:py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-300/40 to-transparent"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {{-- Floating modern shapes --}}
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/3 right-[5%] w-80 h-80 bg-emerald-100/40 rounded-full blur-3xl animate-float-reverse" style="animation-delay: -2s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16" x-data="{ v: false }" x-intersect:enter="v = true"
              :class="['transition-all duration-700', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
             <span class="inline-flex items-center gap-2 text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-4">
@@ -176,9 +207,15 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- GAMME POISSON --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section id="poisson" class="py-24 bg-white relative overflow-hidden">
+<section id="poisson" class="py-16 sm:py-20 lg:py-28 bg-white relative overflow-hidden">
     <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-50 rounded-full blur-[120px] translate-y-1/2"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {{-- Floating modern shapes --}}
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-[10%] w-64 h-64 bg-blue-100/30 rounded-full blur-3xl animate-float"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16" x-data="{ v: false }" x-intersect:enter="v = true"
              :class="['transition-all duration-700', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
             <span class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm uppercase tracking-widest mb-4">
@@ -231,7 +268,7 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- CTA --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section class="relative py-28 overflow-hidden" x-data="{ v: false }" x-intersect:enter="v = true">
+<section class="relative py-16 sm:py-20 lg:py-28 overflow-hidden" x-data="{ v: false }" x-intersect:enter="v = true">
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800"></div>
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute top-1/4 right-[10%] w-80 h-80 bg-accent/10 rounded-full blur-[100px] animate-float"></div>

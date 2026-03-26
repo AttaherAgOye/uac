@@ -7,29 +7,49 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- HERO --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section class="relative pt-36 pb-24 overflow-hidden" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
-    <div class="absolute inset-0">
-        <img src="{{ asset('images/pages/hi/team.jpeg') }}" alt="Le Groupe" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/95 via-primary/85 to-primary-dark/90"></div>
+<section class="relative pt-36 pb-56 lg:pt-48 lg:pb-80 overflow-hidden" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
+    {{-- Background image + multi-layer gradient --}}
+    <div class="absolute inset-0 bg-[#0D3B12]">
+        <img src="{{ asset('images/pages/hi/team.jpeg') }}" alt="Le Groupe" class="w-full h-full object-cover opacity-50 mix-blend-luminosity">
+        {{-- Garantir la présence du vert avec des opacités explicites et un mélange --}}
+        <div class="absolute inset-0 bg-gradient-to-br from-[#0D3B12]/90 via-[#1B5E20]/70 to-[#0D3B12]/80 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-90"></div>
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(249,168,37,0.12),_transparent_60%)]"></div>
     </div>
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-16 right-[10%] w-64 h-64 bg-accent/8 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-20 left-[5%] w-48 h-48 bg-white/5 rounded-full blur-2xl animate-float-reverse"></div>
+    
+    {{-- Solid White Curve Transition --}}
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 translate-y-[2px]">
+        <svg class="relative block w-full h-[30px] sm:h-[50px] md:h-[80px] lg:h-[120px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C52.16,93.81,104.3,88.4,156.4,79.52c55.3-9.4,110.6-21.4,165-23.08Z" fill="#ffffff"></path>
+        </svg>
     </div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {{-- Floating decorative shapes --}}
+    <div class="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
+        <div class="absolute top-16 right-[10%] w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 left-[5%] w-48 h-48 bg-white/5 rounded-full blur-2xl animate-float-reverse"></div>
+        {{-- Dotted pattern --}}
+        <div class="absolute top-1/3 left-[15%] grid grid-cols-4 gap-3 opacity-20">
+            @for($i = 0; $i < 12; $i++)
+                <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+            @endfor
+        </div>
+    </div>
+    
+    {{-- Content --}}
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 sm:mt-0">
         <div class="max-w-3xl mx-auto text-center">
             <div :class="['transition-all duration-700', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6']">
-                <span class="inline-flex items-center gap-2 px-5 py-2 glass rounded-full text-sm font-medium text-white/90 mb-6">
-                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                <span class="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 glass rounded-full text-[11px] sm:text-sm font-medium text-white/90 mb-4 sm:mb-6">
+                    <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-accent animate-pulse"></span>
                     Notre Histoire
                 </span>
             </div>
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight"
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight tracking-tight"
                 :class="['transition-all duration-700 delay-150', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
                 Le Groupe <span class="text-accent">UAC-IOD</span>
             </h1>
-            <p class="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
+            <p class="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed"
                :class="['transition-all duration-700 delay-300', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
                 Une vision née du terrain, une ambition portée par l'action.
             </p>
@@ -40,8 +60,16 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- TIMELINE / STORY --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section class="py-28 bg-white relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-16 sm:py-20 lg:py-28 bg-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/3 rounded-full blur-[120px]"></div>
+    
+    {{-- Floating modern shapes --}}
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-[5%] w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 right-[5%] w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float-reverse" style="animation-delay: -2s;"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {{-- Header --}}
         <div class="text-center mb-20" x-data="{ v: false }" x-intersect:enter="v = true"
              :class="['transition-all duration-700', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
@@ -162,13 +190,63 @@
 </section>
 
 {{-- ═══════════════════════════════════════════════════════ --}}
+{{-- KEY FIGURES --}}
+{{-- ═══════════════════════════════════════════════════════ --}}
+<section class="py-16 sm:py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent/40 to-transparent"></div>
+    
+    {{-- Floating modern shapes --}}
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 right-[5%] w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 left-[5%] w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float-reverse" style="animation-delay: -3s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {{-- Header --}}
+        <div class="text-center mb-20" x-data="{ v: false }" x-intersect:enter="v = true"
+             :class="['transition-all duration-700', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
+            <span class="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest mb-4">
+                <span class="w-8 h-px bg-accent"></span>
+                Chiffres clés
+                <span class="w-8 h-px bg-accent"></span>
+            </span>
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900">Des chiffres qui parlent d'eux-mêmes</h2>
+        </div>
+
+        {{-- Stats grid --}}
+        <div class="grid grid-cols-2 gap-5">
+            @php
+                $stats = [
+                    ['value' => '4', 'label' => 'Pôles d\'activités', 'gradient' => 'from-primary to-primary-light'],
+                    ['value' => '100+', 'label' => 'Collaborateurs', 'gradient' => 'from-accent to-accent-dark'],
+                    ['value' => '10+', 'label' => 'Années d\'expérience', 'gradient' => 'from-emerald-500 to-emerald-600'],
+                    ['value' => 'Mali', 'label' => 'Couverture nationale', 'gradient' => 'from-blue-500 to-blue-600'],
+                ];
+            @endphp
+            @foreach($stats as $stat)
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                    <span class="text-3xl font-extrabold bg-gradient-to-r {{ $stat['gradient'] }} bg-clip-text text-transparent">{{ $stat['value'] }}</span>
+                    <span class="block text-sm text-gray-500 mt-1 font-medium">{{ $stat['label'] }}</span>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════════════════ --}}
 {{-- MISSION & VALUES --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section class="py-28 bg-gray-50 relative overflow-hidden">
+<section class="py-16 sm:py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent/40 to-transparent"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary/3 rounded-full blur-[120px]"></div>
+    
+    {{-- Floating modern shapes --}}
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-[-5%] w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 right-[5%] w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float-reverse" style="animation-delay: -2s;"></div>
+    </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid lg:grid-cols-2 gap-20">
             {{-- Mission --}}
             <div x-data="{ v: false }" x-intersect:enter="v = true"
@@ -240,7 +318,7 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- AUJOURD'HUI --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section class="py-28 bg-primary-dark relative overflow-hidden" x-data="{ v: false }" x-intersect:enter="v = true">
+<section class="py-16 sm:py-20 lg:py-28 bg-primary-dark relative overflow-hidden" x-data="{ v: false }" x-intersect:enter="v = true">
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
         <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary-light/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3"></div>

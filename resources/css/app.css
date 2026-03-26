@@ -15,6 +15,15 @@
     --color-accent-dark: #F57F17;
 }
 
+/* ── Brown Theme Override ── */
+html[data-theme="brown"] {
+    --color-primary: #5D4037;
+    --color-primary-light: #795548;
+    --color-primary-dark: #3E2723;
+    --color-accent: #F9A825;
+    --color-accent-dark: #F57F17;
+}
+
 /* ── Base keyframes ── */
 @keyframes fade-in-up {
     from { opacity: 0; transform: translateY(30px); }
@@ -136,7 +145,7 @@
 
 /* ── Gradient text ── */
 @utility text-gradient-primary {
-    background: linear-gradient(135deg, #1B5E20, #2E7D32, #F9A825);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light), var(--color-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -156,7 +165,7 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
 }
 @utility glass-dark {
-    background: rgba(13, 59, 18, 0.6);
+    background: color-mix(in srgb, var(--color-primary-dark) 60%, transparent);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -168,15 +177,15 @@
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #F9A825, #F57F17);
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark));
     border-radius: 2px;
 }
 
 /* ── Scrollbar styling ── */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #1B5E20; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #2E7D32; }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary-light); }
 
 /* ── Smooth scroll ── */
 html { scroll-behavior: smooth; }
