@@ -75,20 +75,20 @@
 
                 {{-- CTAs --}}
                 <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto" :class="['transition-all duration-700 delay-[450ms]', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
-                    <a href="{{ route('groupe') }}"
+                    <a href="{{ route('contact') }}?type=devis"
                        class="group px-6 sm:px-8 py-3.5 sm:py-4 bg-accent hover:bg-accent-dark text-primary-dark font-bold rounded-xl sm:rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-1 inline-flex items-center justify-center gap-3 w-full sm:w-auto text-sm sm:text-base">
-                        <span>Découvrir le Groupe</span>
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                        <span>Commander / Devis</span>
                     </a>
                     <a href="{{ route('poles') }}"
                        class="px-6 sm:px-8 py-3.5 sm:py-4 glass hover:bg-white/15 text-white font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base">
                         <span>Nos Activités</span>
                         <div class="w-1.5 h-1.5 rounded-full bg-white/50 group-hover:bg-accent transition-colors hidden sm:block"></div>
                     </a>
-                    <a href="{{ route('contact') }}?type=devis"
+                    <a href="{{ route('groupe') }}"
                        class="group px-6 sm:px-8 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-                        <span>Commander / Devis</span>
+                        <span>Découvrir le Groupe</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
                 </div>
             </div>
