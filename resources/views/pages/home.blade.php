@@ -57,11 +57,14 @@
                 </div>
 
                 {{-- Heading --}}
-                <div :class="['transition-all duration-700 delay-150', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']" class="flex flex-col items-center lg:items-start w-full">
-                    <img src="{{ asset('images/logo.jpeg') }}" alt="UAC-IOD Logo" class="h-24 sm:h-32 lg:h-40 w-auto object-contain rounded-2xl shadow-xl bg-white/10 p-2 sm:p-3 mb-4 sm:mb-6 border border-white/20">
-                    <div class="h-1 w-16 sm:w-24 bg-gradient-to-r from-accent to-accent-dark rounded-full mb-3 sm:mb-6"></div>
-                    <p class="text-xl sm:text-3xl text-white font-semibold mb-4 sm:mb-2 tracking-wide uppercase">Groupe Industriel</p>
-                </div>
+                <h1 class="text-5xl sm:text-7xl lg:text-[5.5rem] font-black text-white mb-4 sm:mb-6 leading-none tracking-tighter w-full"
+                    :class="['transition-all duration-700 delay-150', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
+                    UAC<span class="text-accent">-IOD</span>
+                </h1>
+                <p class="text-xl sm:text-3xl text-white/90 font-light mb-6 sm:mb-8 tracking-wide w-full"
+                   :class="['transition-all duration-700 delay-[250ms]', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
+                    Groupe Industriel
+                </p>
 
                 {{-- Description --}}
                 <div :class="['transition-all duration-700 delay-300', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">

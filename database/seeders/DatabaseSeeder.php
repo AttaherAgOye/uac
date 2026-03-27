@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(
-            ['email' => 'admin@uac-iod.com'],
-            [
-                'name' => 'Admin UAC',
-                'password' => \Illuminate\Support\Facades\Hash::make('password'),
-            ]
+        ['email' => 'admin@uac-iod.com'],
+        [
+            'name' => 'Admin UAC',
+            'password' => \Illuminate\Support\Facades\Hash::make('uac_mali_2026#'),
+        ]
         );
     }
 }
