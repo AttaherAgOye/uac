@@ -33,6 +33,11 @@ class PageController extends Controller
         return view('pages.poles.transport');
     }
 
+    public function poleLogistique()
+    {
+        return view('pages.poles.logistique');
+    }
+
     public function poleVehicules()
     {
         return view('pages.poles.vehicules');

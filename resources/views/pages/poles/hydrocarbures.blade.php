@@ -46,7 +46,7 @@
             <div :class="['transition-all duration-700', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6']">
                 <span class="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 glass rounded-full text-[11px] sm:text-sm font-medium text-white/90 mb-4 sm:mb-6">
                     <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-accent animate-pulse"></span>
-                    Pôle 4
+                    Pôle 5
                 </span>
             </div>
             <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight tracking-tight"
@@ -55,7 +55,7 @@
             </h1>
             <p class="text-lg sm:text-xl text-white/80 max-w-2xl leading-relaxed"
                :class="['transition-all duration-700 delay-300', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
-                Approvisionnement sécurisé et structuré en produits pétroliers.
+                Une expérience complète au service de la mobilité. Au-delà du carburant, nous accompagnons chaque trajet.
             </p>
         </div>
     </div>
@@ -74,17 +74,17 @@
                     <span class="w-8 h-px bg-red-400"></span>
                     Sécurité & Conformité
                 </span>
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">Une exigence forte en matière de <span class="text-red-600">sécurité</span></h2>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">Une offre complète <span class="text-red-600">multi-services</span></h2>
                 <p class="text-gray-600 text-lg leading-relaxed mb-10">
-                    UAC-IOD intervient dans la distribution de produits pétroliers avec une exigence forte en matière de sécurité et de conformité. Notre logistique intégrée garantit un approvisionnement fiable sur l'ensemble du territoire.
+                    Nous proposons des services complémentaires pensés pour améliorer l'expérience de nos clients. Nos espaces permettent de se rafraîchir et d'accéder à des produits essentiels à chaque étape de votre route. L'espace attend ses images !
                 </p>
                 <div class="space-y-3">
                     @php
                         $engagements = [
-                            ['text' => 'Respect des normes de sécurité', 'icon' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'],
-                            ['text' => 'Approvisionnement fiable et régulier', 'icon' => 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'],
-                            ['text' => 'Capacité opérationnelle maîtrisée', 'icon' => 'M13 10V3L4 14h7v7l9-11h-7z'],
-                            ['text' => 'Logistique intégrée au groupe', 'icon' => 'M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0'],
+                            ['text' => 'Carburant de haute qualité', 'icon' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'],
+                            ['text' => 'Entretien automobile', 'icon' => 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'],
+                            ['text' => 'Lavage de véhicules', 'icon' => 'M13 10V3L4 14h7v7l9-11h-7z'],
+                            ['text' => 'Boutique de proximité', 'icon' => 'M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0'],
                         ];
                     @endphp
                     @foreach($engagements as $eng)

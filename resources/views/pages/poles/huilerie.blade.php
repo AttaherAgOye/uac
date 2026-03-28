@@ -46,7 +46,7 @@
             <div :class="['transition-all duration-700', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6']">
                 <span class="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 glass rounded-full text-[11px] sm:text-sm font-medium text-white/90 mb-4 sm:mb-6">
                     <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-                    Pôle 5 — Transformation
+                    Pôle 6 — Transformation
                 </span>
             </div>
             <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight tracking-tight"
@@ -55,7 +55,7 @@
             </h1>
             <p class="text-lg sm:text-xl text-white/80 max-w-2xl leading-relaxed"
                :class="['transition-all duration-700 delay-300', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
-                Industrie de transformation de la graine de coton. Production d'huile alimentaire de haute qualité, de produits cosmétiques et de tourteaux pour l'élevage.
+                Une expertise industrielle au service de la performance agricole. Nous valorisons chaque ressource. Rien n'est perdu dans notre processus.
             </p>
         </div>
     </div>
@@ -133,20 +133,20 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- GAMME COSMÉTIQUES --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section id="cosmetiques" class="py-16 sm:py-20 lg:py-28 bg-orange-50/30 relative overflow-hidden">
+<section id="cosmetiques" class="py-16 sm:py-20 lg:py-28 bg-amber-50/30 relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-300/40 to-transparent"></div>
     
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-1/3 right-[5%] w-80 h-80 bg-orange-100/40 rounded-full blur-3xl animate-float-reverse" style="animation-delay: -2s;"></div>
+        <div class="absolute top-1/3 right-[5%] w-80 h-80 bg-amber-100/40 rounded-full blur-3xl animate-float-reverse" style="animation-delay: -2s;"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16" x-data="{ v: false }" x-intersect:enter="v = true"
              :class="['transition-all duration-700', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
-            <span class="inline-flex items-center gap-2 text-orange-600 font-semibold text-sm uppercase tracking-widest mb-4">
-                <span class="w-8 h-px bg-orange-400"></span>
+            <span class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm uppercase tracking-widest mb-4">
+                <span class="w-8 h-px bg-amber-400"></span>
                 Soins Naturels
-                <span class="w-8 h-px bg-orange-400"></span>
+                <span class="w-8 h-px bg-amber-400"></span>
             </span>
             <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900">Cosmétiques & Savons</h2>
             <p class="text-gray-500 text-lg max-w-2xl mx-auto mt-4">L'huile de coton est prisée dans l'industrie cosmétique pour ses vertus hydratantes, antioxydantes et apaisantes.</p>
@@ -168,7 +168,7 @@
                  :class="['transition-all duration-800 ease-out delay-200', v ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12']">
                 
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50 flex gap-4 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 shrink-0 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl">🧼</div>
+                    <div class="w-12 h-12 shrink-0 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl">🧼</div>
                     <div>
                         <h4 class="text-lg font-bold text-gray-900 mb-1">Savons d'excellence</h4>
                         <p class="text-gray-600 text-sm leading-relaxed">Fabrication de savons de ménage et de toilette durables, moussants tout en protégeant les peaux sensibles.</p>
@@ -176,7 +176,7 @@
                 </div>
 
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50 flex gap-4 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 shrink-0 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl">🧴</div>
+                    <div class="w-12 h-12 shrink-0 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl">🧴</div>
                     <div>
                         <h4 class="text-lg font-bold text-gray-900 mb-1">Crèmes et Soins</h4>
                         <p class="text-gray-600 text-sm leading-relaxed">Formulas riches en acide linoléique : nourrit intensément, prévient le vieillissement cutané, apporte douceur et protection.</p>

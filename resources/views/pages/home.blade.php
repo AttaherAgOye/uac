@@ -249,13 +249,13 @@
         </div>
 
         {{-- Cards --}}
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             @php
                 $poles = [
                     [
                         'title' => 'Nutrition Animale',
                         'subtitle' => 'UAC / Bu Duman',
-                        'desc' => 'Production industrielle d\'aliments complets et sécurisés pour volailles, bétail et aquaculture.',
+                        'desc' => 'Production industrielle, de la matière première au produit fini pour l\'élevage.',
                         'icon' => 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
                         'route' => 'poles.nutrition',
                         'gradient' => 'from-emerald-500 to-green-600',
@@ -264,9 +264,9 @@
                         'img' => 'poles/nutrition animal.jpeg',
                     ],
                     [
-                        'title' => 'Transport & Logistique',
-                        'subtitle' => 'Flotte structurée',
-                        'desc' => 'Solutions logistiques structurées : citernes, bennes, plateaux, porteurs spécialisés.',
+                        'title' => 'Transport Routier',
+                        'subtitle' => 'Continuité de votre activité',
+                        'desc' => 'Une organisation reposant sur des équipes formées et une flotte de 100 véhicules.',
                         'icon' => 'M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
                         'route' => 'poles.transport',
                         'gradient' => 'from-blue-500 to-indigo-600',
@@ -275,12 +275,23 @@
                         'img' => 'poles/transport et logistique.jpeg',
                     ],
                     [
+                        'title' => 'Logistique',
+                        'subtitle' => 'Exécution sans faille',
+                        'desc' => 'Stockage optimisé, manutention maîtrisée et gestion des flux en temps réel.',
+                        'icon' => 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
+                        'route' => 'poles.logistique',
+                        'gradient' => 'from-indigo-500 to-indigo-600',
+                        'bg' => 'bg-indigo-50',
+                        'text' => 'text-indigo-600',
+                        'img' => 'img5.jpeg',
+                    ],
+                    [
                         'title' => 'Vente de Véhicules',
                         'subtitle' => 'Solutions professionnelles',
                         'desc' => 'Commercialisation de véhicules adaptés aux besoins professionnels et industriels.',
                         'icon' => 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
                         'route' => 'poles.vehicules',
-                        'gradient' => 'from-amber-500 to-orange-600',
+                        'gradient' => 'from-amber-500 to-amber-600',
                         'bg' => 'bg-amber-50',
                         'text' => 'text-amber-600',
                         'img' => 'img6.jpeg',
@@ -288,13 +299,13 @@
                     [
                         'title' => 'Hydrocarbures',
                         'subtitle' => 'Distribution sécurisée',
-                        'desc' => 'Approvisionnement et distribution sécurisée de produits pétroliers.',
+                        'desc' => 'Distribution de carburant, entretien automobile et services de proximité.',
                         'icon' => 'M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z',
                         'route' => 'poles.hydrocarbures',
-                        'gradient' => 'from-red-500 to-rose-600',
+                        'gradient' => 'from-red-500 to-red-600',
                         'bg' => 'bg-red-50',
                         'text' => 'text-red-600',
-                        'img' => 'img3.jpeg',
+                        'img' => 'poles/hydrocarbure.jpeg',
                     ],
                     [
                         'title' => 'Huilerie',

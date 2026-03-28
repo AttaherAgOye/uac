@@ -64,16 +64,77 @@
 {{-- ═══════════════════════════════════════════════════════ --}}
 {{-- GAMME NAVIGATION --}}
 {{-- ═══════════════════════════════════════════════════════ --}}
-<section class="bg-white sticky top-20 z-30 border-b border-gray-100 shadow-sm" x-data="{ active: 'volaille' }">
+<section class="bg-white sticky top-20 z-30 border-b border-gray-100 shadow-sm" x-data="{ active: 'processus' }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex overflow-x-auto gap-1 py-3 scrollbar-hide">
-            @foreach(['volaille' => 'Gamme Volaille', 'betail' => 'Gamme Bétail', 'poisson' => 'Gamme Poisson'] as $key => $label)
+            @foreach(['processus' => 'Notre Processus', 'volaille' => 'Gamme Volaille', 'betail' => 'Gamme Bétail', 'poisson' => 'Gamme Poisson'] as $key => $label)
                 <a href="#{{ $key }}" class="px-6 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap transition-all duration-300"
                    :class="active === '{{ $key }}' ? 'bg-emerald-100 text-emerald-700 shadow-sm' : 'text-gray-500 hover:bg-emerald-50 hover:text-emerald-600'"
                    @click="active = '{{ $key }}'">
                     {{ $label }}
                 </a>
             @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════════════════ --}}
+{{-- PROCESSUS DE PRODUCTION --}}
+{{-- ═══════════════════════════════════════════════════════ --}}
+<section id="processus" class="py-16 sm:py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16" x-data="{ v: false }" x-intersect:enter="v = true"
+             :class="['transition-all duration-700', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
+            <span class="inline-flex items-center gap-2 text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-4">
+                <span class="w-8 h-px bg-emerald-400"></span>
+                Savoir-faire Industriel
+                <span class="w-8 h-px bg-emerald-400"></span>
+            </span>
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900">Processus de Production</h2>
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto mt-4">La qualité de nos gammes d'aliments Bu Duman repose sur un processus industriel rigoureux et certifié.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            @php
+                $steps = [
+                    ['title' => '1. Réception', 'desc' => 'Réception et stockage sécurisé des intrants.', 'icon' => 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z'],
+                    ['title' => '2. Dosage', 'desc' => 'Mesure précise des ingrédients.', 'icon' => 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3'],
+                    ['title' => '3. Broyage', 'desc' => 'Broyage pour une granulométrie optimale.', 'icon' => 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z'],
+                    ['title' => '4. Mélange', 'desc' => 'Homogénéisation parfaite des composants.', 'icon' => 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'],
+                    ['title' => '5. Granulation', 'desc' => 'Pressage en granulés (pelletisation).', 'icon' => 'M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5'],
+                    ['title' => '6. Refroidissement', 'desc' => 'Stabilisation de la température.', 'icon' => 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'],
+                    ['title' => '7. Émiettage', 'desc' => 'Adaptation de la taille (selon besoin).', 'icon' => 'M14.121 15.536c-1.171 1.952-3.07 1.952-4.242 0-1.172-1.953-1.172-5.119 0-7.072 1.171-1.952 3.07-1.952 4.242 0 1.172 1.953 1.172 5.119 0 7.072z'],
+                    ['title' => '8. Ensachage', 'desc' => 'Conditionnement qualitatif et pesée.', 'icon' => 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'],
+                ];
+            @endphp
+            @foreach($steps as $index => $step)
+                <div class="bg-white rounded-2xl p-6 border border-emerald-100 hover:shadow-lg transition-all"
+                     x-data="{ v: false }" x-intersect:enter="v = true"
+                     :class="['transition-all duration-700 ease-out', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']"
+                     style="transition-delay: {{ $index * 50 }}ms">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ $step['icon'] }}"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">{{ $step['title'] }}</h3>
+                    <p class="text-gray-500 text-sm">{{ $step['desc'] }}</p>
+                </div>
+            @endforeach
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-emerald-600 rounded-3xl p-8 sm:p-10 text-white relative overflow-hidden" x-data="{ v: false }" x-intersect:enter="v = true" :class="['transition-all duration-700', v ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12']">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <h3 class="text-2xl font-bold mb-4 relative z-10">Laboratoire de Contrôle</h3>
+                <p class="text-emerald-50 leading-relaxed relative z-10">
+                    Notre laboratoire moderne, équipé du NIRS DS 2500, est le seul certifié dans la sous-région. Il garantit la qualité à 100% de la réception des matières premières jusqu'au produit fini, par des tests microbiologiques rigoureux.
+                </p>
+            </div>
+            <div class="bg-white rounded-3xl p-8 sm:p-10 border border-emerald-100 shadow-sm" x-data="{ v: false }" x-intersect:enter="v = true" :class="['transition-all duration-700', v ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12']">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Notre Équipe experte</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Composée de vétérinaires spécialisés, zootechniciens, et ingénieurs nutritionnistes, notre équipe assure non seulement la formulation de produits haute performance, mais également un accompagnement et un Service Après-Vente de proximité pour les éleveurs.
+                </p>
+            </div>
         </div>
     </div>
 </section>
