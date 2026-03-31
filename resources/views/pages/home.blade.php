@@ -261,7 +261,7 @@
                         'gradient' => 'from-emerald-500 to-green-600',
                         'bg' => 'bg-emerald-50',
                         'text' => 'text-emerald-600',
-                        'img' => 'poles/nutrition animal.jpeg',
+                        'img' => 'poles/Nutrition Animale.jpeg',
                     ],
                     [
                         'title' => 'Transport Routier',
@@ -283,7 +283,7 @@
                         'gradient' => 'from-indigo-500 to-indigo-600',
                         'bg' => 'bg-indigo-50',
                         'text' => 'text-indigo-600',
-                        'img' => 'img5.jpeg',
+                        'img' => 'poles/Logistique.jpeg',
                     ],
                     [
                         'title' => 'Vente de Véhicules',
