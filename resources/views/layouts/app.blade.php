@@ -47,7 +47,7 @@
                             ['route' => 'groupe', 'label' => 'Le Groupe'],
                             ['route' => 'poles', 'label' => 'Nos Pôles'],
                             ['route' => 'carrieres', 'label' => 'Carrières'],
-                            ['route' => 'blog', 'label' => 'Blog'],
+                            ['route' => 'blog', 'label' => 'Actualités'],
                             ['route' => 'partenaires', 'label' => 'Partenaires'],
                         ];
                     @endphp
@@ -142,7 +142,7 @@
                         <li><a href="{{ route('groupe') }}" class="text-gray-400 hover:text-accent transition-colors duration-200 text-sm">Le Groupe</a></li>
                         <li><a href="{{ route('poles') }}" class="text-gray-400 hover:text-accent transition-colors duration-200 text-sm">Nos Pôles</a></li>
                         <li><a href="{{ route('carrieres') }}" class="text-gray-400 hover:text-accent transition-colors duration-200 text-sm">Carrières</a></li>
-                        <li><a href="{{ route('blog') }}" class="text-gray-400 hover:text-accent transition-colors duration-200 text-sm">Blog</a></li>
+                        <li><a href="{{ route('blog') }}" class="text-gray-400 hover:text-accent transition-colors duration-200 text-sm">Actualités</a></li>
                     </ul>
                 </div>
 

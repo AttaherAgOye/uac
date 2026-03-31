@@ -232,7 +232,7 @@
                 </div>
                 
                 <div class="relative">
-                    <img src="{{ asset('images/pages/poles/huillerie/img2.jpeg') }}" alt="Graines de coton" class="rounded-3xl shadow-2xl object-cover h-[400px] w-full">
+                    <img src="{{ asset('images/pages/poles/Tourteaux de Coton.jpeg') }}" alt="Graines de coton" class="rounded-3xl shadow-2xl object-cover h-[400px] w-full">
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-xl border border-gray-100 animate-float">
                         <span class="text-sm font-bold text-emerald-600 uppercase tracking-wider block mb-1">Taux de protéine</span>
                         <span class="text-3xl font-extrabold text-gray-900">> 40%</span>

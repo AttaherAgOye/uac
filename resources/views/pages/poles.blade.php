@@ -100,7 +100,7 @@
             <div :class="['transition-all duration-800 ease-out delay-200', v ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12']">
                 <div class="relative">
                     <div class="rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="{{ asset('images/pages/poles/nutrition animal.jpeg') }}" alt="Nutrition Animale" class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700">
+                        <img src="{{ asset('images/pages/poles/Nutrition Animale.jpeg') }}" alt="Nutrition Animale" class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-emerald-200 rounded-3xl -z-10"></div>
                     <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-emerald-100 rounded-2xl -z-10"></div>
@@ -211,7 +211,7 @@
             <div :class="['transition-all duration-800 ease-out delay-200', v ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12']">
                 <div class="relative">
                     <div class="rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="{{ asset('images/pages/img5.jpeg') }}" alt="Logistique" class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700">
+                        <img src="{{ asset('images/pages/poles/Logistique.jpeg') }}" alt="Logistique" class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-indigo-200 rounded-3xl -z-10"></div>
                     <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-indigo-100 rounded-2xl -z-10"></div>

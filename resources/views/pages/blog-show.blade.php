@@ -41,7 +41,7 @@
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 sm:mt-0">
         <a href="{{ route('blog') }}" class="group inline-flex items-center gap-2 text-white/70 hover:text-white text-sm mb-6 sm:mb-8 transition-colors">
             <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-            Retour au blog
+            Retour aux actualités
         </a>
         <div class="flex flex-wrap items-center gap-3 mb-4 sm:mb-5">
             <span class="px-3 sm:px-4 py-1.5 glass rounded-full text-[11px] sm:text-xs font-bold text-accent uppercase tracking-wider backdrop-blur-sm border border-accent/20">{{ $post->category }}</span>

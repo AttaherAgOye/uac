@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blog & Actualités')
+@section('title', 'Actualités')
 
 @section('content')
 
@@ -45,7 +45,7 @@
             </div>
             <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight tracking-tight"
                 :class="['transition-all duration-700 delay-150', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
-                Blog & <span class="text-accent">Actualités</span>
+                Nos <span class="text-accent">Actualités</span>
             </h1>
             <p class="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed"
                :class="['transition-all duration-700 delay-300', loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
