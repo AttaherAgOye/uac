@@ -294,7 +294,7 @@
                         'gradient' => 'from-amber-500 to-amber-600',
                         'bg' => 'bg-amber-50',
                         'text' => 'text-amber-600',
-                        'img' => 'img6.jpeg',
+                        'img' => 'poles/vehicule/WhatsApp Image 2026-03-31 at 6.03.39 PM.jpeg',
                     ],
                     [
                         'title' => 'Hydrocarbures',
@@ -305,7 +305,7 @@
                         'gradient' => 'from-red-500 to-red-600',
                         'bg' => 'bg-red-50',
                         'text' => 'text-red-600',
-                        'img' => 'poles/hydrocarbure.jpeg',
+                        'img' => 'poles/hydrocarbure/WhatsApp Image 2026-03-31 at 6.03.41 PM.jpeg',
                     ],
                     [
                         'title' => 'Huilerie',
