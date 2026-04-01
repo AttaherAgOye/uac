@@ -10,7 +10,7 @@
 <section class="relative pt-36 pb-56 lg:pt-48 lg:pb-80 overflow-hidden" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
     {{-- Background image + multi-layer gradient --}}
     <div class="absolute inset-0 bg-[#0D3B12]">
-        <img src="{{ asset('images/pages/img6.jpeg') }}" alt="Véhicules" class="w-full h-full object-cover opacity-50 mix-blend-luminosity">
+        <img src="{{ asset('images/pages/poles/vehicule/WhatsApp Image 2026-03-31 at 6.03.38 PM.jpeg') }}" alt="Véhicules" class="w-full h-full object-cover opacity-50 mix-blend-luminosity">
         {{-- Garantir la présence du vert avec des opacités explicites et un mélange --}}
         <div class="absolute inset-0 bg-gradient-to-br from-[#0D3B12]/90 via-[#1B5E20]/70 to-[#0D3B12]/80 mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-90"></div>

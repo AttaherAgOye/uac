@@ -236,7 +236,7 @@
                  :class="['transition-all duration-800 ease-out', v ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12']">
                 <div class="relative">
                     <div class="rounded-3xl overflow-hidden shadow-2xl bg-gray-200 flex items-center justify-center">
-                        <img src="{{ asset('images/pages/img6.jpeg') }}" alt="Vente de Véhicules" class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700">
+                        <img src="{{ asset('images/pages/poles/vehicule/WhatsApp Image 2026-03-31 at 6.03.39 PM.jpeg') }}" alt="Vente de Véhicules" class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="absolute -top-4 -left-4 w-24 h-24 border-2 border-amber-200 rounded-3xl -z-10"></div>
                     <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-amber-100 rounded-2xl -z-10"></div>
@@ -321,7 +321,7 @@
             <div :class="['transition-all duration-800 ease-out delay-200', v ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12']">
                 <div class="relative">
                     <div class="rounded-3xl overflow-hidden shadow-2xl bg-gray-200 flex items-center justify-center">
-                        <img src="{{ asset('images/pages/poles/hydrocarbure.jpeg') }}" alt="Hydrocarbures" class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700">
+                        <img src="{{ asset('images/pages/poles/hydrocarbure/WhatsApp Image 2026-03-31 at 6.03.41 PM.jpeg') }}" alt="Hydrocarbures" class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-red-200 rounded-3xl -z-10"></div>
                     <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-red-100 rounded-2xl -z-10"></div>

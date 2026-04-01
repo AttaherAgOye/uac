@@ -6,7 +6,7 @@
     <meta name="description" content="UAC-IOD - Groupe industriel multisectoriel engagé dans le développement stratégique du Mali.">
     <title>@yield('title', 'UAC-IOD Groupe') - UAC-IOD</title>
 
-    <link rel="icon" href="{{ asset('images/logo.jpeg') }}" type="image/jpeg">
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900" rel="stylesheet" />
 
@@ -35,7 +35,7 @@
             <div class="flex items-center justify-between h-20">
                 {{-- Logo --}}
                 <a href="{{ route('home') }}" class="flex items-center space-x-3 group">
-                    <img src="{{ asset('images/logo.jpeg') }}" alt="UAC-IOD" class="h-14 w-auto max-w-[140px] object-contain rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <img src="{{ asset('images/logo.png') }}" alt="UAC-IOD" class="bg-white p-1 h-14 w-auto max-w-[140px] object-contain rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300">
                     <span class="block text-xs font-medium transition-colors duration-300" :class="scrolled ? 'text-gray-500' : 'text-white/70'">Groupe Industriel</span>
                 </a>
 
@@ -118,7 +118,7 @@
                 {{-- Brand --}}
                 <div class="lg:col-span-1 flex flex-col items-center sm:items-start">
                     <a href="{{ route('home') }}" class="flex items-center space-x-3 mb-4 sm:mb-6">
-                        <img src="{{ asset('images/logo.jpeg') }}" alt="UAC-IOD" class="h-12 w-12 rounded-lg object-cover">
+                        <img src="{{ asset('images/logo.png') }}" alt="UAC-IOD" class="bg-white p-1 h-12 w-12 rounded-lg object-contain">
                         <span class="text-xl font-bold text-white">UAC-IOD</span>
                     </a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">

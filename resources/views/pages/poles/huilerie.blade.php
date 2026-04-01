@@ -100,30 +100,43 @@
             <p class="text-gray-500 text-lg max-w-2xl mx-auto mt-4">Une excellente huile alimentaire légère et savoureuse, idéale pour la cuisine et l'industrie alimentaire.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl hover:border-yellow-200 hover:-translate-y-1 transition-all duration-500 group"
-                 x-data="{ v: false }" x-intersect:enter="v = true"
-                 :class="['transition-all duration-700 ease-out', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
-                <span class="text-5xl mb-4 block">🍳</span>
-                <h3 class="text-2xl font-extrabold text-gray-900 mt-2 mb-4 group-hover:text-yellow-700 transition-colors">Huile Raffinée de Coton</h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">Huile de très haute qualité, raffinée pour offrir un goût neutre et une tolérance à haute température. Parfaite pour la friture et l'assaisonnement.</p>
-                <div class="flex flex-wrap gap-2">
-                    @foreach(['Riche en Oméga-6', 'Sans cholestérol', 'Vitamine E', 'Légère'] as $benefit)
-                        <span class="px-3 py-1.5 bg-yellow-100/50 text-yellow-800 rounded-full text-sm font-bold border border-yellow-200/50">{{ $benefit }}</span>
-                    @endforeach
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div x-data="{ v: false }" x-intersect:enter="v = true"
+                 :class="['transition-all duration-800 ease-out', v ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12']">
+                <div class="rounded-3xl overflow-hidden shadow-2xl relative">
+                    <img src="{{ asset('images/pages/poles/huillerie/img3.jpeg') }}" alt="Huile et Margarine" class="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-900/60 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <h3 class="text-white text-2xl font-bold">L'excellence de la nature</h3>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl hover:border-yellow-200 hover:-translate-y-1 transition-all duration-500 group"
-                 x-data="{ v: false }" x-intersect:enter="v = true"
-                 :class="['transition-all duration-700 ease-out delay-100', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
-                <span class="text-5xl mb-4 block">🧈</span>
-                <h3 class="text-2xl font-extrabold text-gray-900 mt-2 mb-4 group-hover:text-yellow-700 transition-colors">Margarines Végétales</h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">Produite à l'aide de notre huile de coton supérieure, notre margarine est une excellente alternative saine et onctueuse pour la pâtisserie et la tartine.</p>
-                <div class="flex flex-wrap gap-2">
-                    @foreach(['100% Végétale', 'Onctueuse', 'Cuisson & Tartine', 'Longue conservation'] as $benefit)
-                        <span class="px-3 py-1.5 bg-yellow-100/50 text-yellow-800 rounded-full text-sm font-bold border border-yellow-200/50">{{ $benefit }}</span>
-                    @endforeach
+            <div class="space-y-6">
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl hover:border-yellow-200 hover:-translate-y-1 transition-all duration-500 group"
+                     x-data="{ v: false }" x-intersect:enter="v = true"
+                     :class="['transition-all duration-700 ease-out', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
+                    <span class="text-5xl mb-4 block">🍳</span>
+                    <h3 class="text-2xl font-extrabold text-gray-900 mt-2 mb-4 group-hover:text-yellow-700 transition-colors">Huile Raffinée de Coton</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Huile de très haute qualité, raffinée pour offrir un goût neutre et une tolérance à haute température. Parfaite pour la friture et l'assaisonnement.</p>
+                    <div class="flex flex-wrap gap-2">
+                        @foreach(['Qualité Supérieure', 'Goût Neutre', 'Spéciale Cuisson', 'Anti-cholestérol'] as $benefit)
+                            <span class="px-3 py-1.5 bg-yellow-100/50 text-yellow-800 rounded-full text-sm font-bold border border-yellow-200/50">{{ $benefit }}</span>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl hover:border-yellow-200 hover:-translate-y-1 transition-all duration-500 group"
+                     x-data="{ v: false }" x-intersect:enter="v = true"
+                     :class="['transition-all duration-700 ease-out delay-200', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
+                    <span class="text-5xl mb-4 block">🧈</span>
+                    <h3 class="text-2xl font-extrabold text-gray-900 mt-2 mb-4 group-hover:text-yellow-700 transition-colors">Margarines Végétales</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Produite à l'aide de notre huile de coton supérieure, notre margarine est une excellente alternative saine et onctueuse pour la pâtisserie et la tartine.</p>
+                    <div class="flex flex-wrap gap-2">
+                        @foreach(['100% Végétale', 'Onctueuse', 'Cuisson & Tartine', 'Longue conservation'] as $benefit)
+                            <span class="px-3 py-1.5 bg-yellow-100/50 text-yellow-800 rounded-full text-sm font-bold border border-yellow-200/50">{{ $benefit }}</span>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,37 +165,23 @@
             <p class="text-gray-500 text-lg max-w-2xl mx-auto mt-4">L'huile de coton est prisée dans l'industrie cosmétique pour ses vertus hydratantes, antioxydantes et apaisantes.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div x-data="{ v: false }" x-intersect:enter="v = true"
-                 :class="['transition-all duration-800 ease-out', v ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12']">
-                <div class="rounded-3xl overflow-hidden shadow-2xl relative">
-                    <img src="{{ asset('images/pages/poles/huillerie/img3.jpeg') }}" alt="Produits cosmétiques" class="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-orange-900/60 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <h3 class="text-white text-2xl font-bold">Un savoir-faire industriel</h3>
-                    </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50 flex gap-4 hover:shadow-md transition-shadow" x-data="{ v: false }" x-intersect:enter="v = true"
+                 :class="['transition-all duration-800 ease-out', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
+                <div class="w-12 h-12 shrink-0 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl">🧼</div>
+                <div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-1">Savons d'excellence</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Fabrication de savons de ménage et de toilette durables, moussants tout en protégeant les peaux sensibles.</p>
                 </div>
             </div>
 
-            <div class="space-y-6" x-data="{ v: false }" x-intersect:enter="v = true"
-                 :class="['transition-all duration-800 ease-out delay-200', v ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12']">
-                
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50 flex gap-4 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 shrink-0 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl">🧼</div>
-                    <div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-1">Savons d'excellence</h4>
-                        <p class="text-gray-600 text-sm leading-relaxed">Fabrication de savons de ménage et de toilette durables, moussants tout en protégeant les peaux sensibles.</p>
-                    </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50 flex gap-4 hover:shadow-md transition-shadow" x-data="{ v: false }" x-intersect:enter="v = true"
+                 :class="['transition-all duration-800 ease-out delay-200', v ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8']">
+                <div class="w-12 h-12 shrink-0 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl">🧴</div>
+                <div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-1">Crèmes et Soins</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Formulas riches en acide linoléique : nourrit intensément, prévient le vieillissement cutané, apporte douceur et protection.</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-orange-100/50 flex gap-4 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 shrink-0 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl">🧴</div>
-                    <div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-1">Crèmes et Soins</h4>
-                        <p class="text-gray-600 text-sm leading-relaxed">Formulas riches en acide linoléique : nourrit intensément, prévient le vieillissement cutané, apporte douceur et protection.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>

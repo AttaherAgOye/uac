@@ -10,7 +10,7 @@
 <section class="relative pt-36 pb-56 lg:pt-48 lg:pb-80 overflow-hidden" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
     {{-- Background image + multi-layer gradient --}}
     <div class="absolute inset-0 bg-[#0D3B12]">
-        <img src="{{ asset('images/pages/poles/hydrocarbure.jpeg') }}" alt="Hydrocarbures" class="w-full h-full object-cover opacity-50 mix-blend-luminosity">
+        <img src="{{ asset('images/pages/poles/hydrocarbure/WhatsApp Image 2026-03-31 at 6.03.40 PM.jpeg') }}" alt="Hydrocarbures" class="w-full h-full object-cover opacity-50 mix-blend-luminosity">
         {{-- Garantir la présence du vert avec des opacités explicites et un mélange --}}
         <div class="absolute inset-0 bg-gradient-to-br from-[#0D3B12]/90 via-[#1B5E20]/70 to-[#0D3B12]/80 mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-90"></div>
@@ -101,7 +101,7 @@
                  :class="['transition-all duration-800 ease-out delay-200', v ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12']">
                 <div class="relative">
                     <div class="rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="{{ asset('images/pages/poles/hydrocarbure.jpeg') }}" alt="Hydrocarbures" class="w-full h-[480px] object-cover hover:scale-105 transition-transform duration-700">
+                        <img src="{{ asset('images/pages/poles/hydrocarbure/WhatsApp Image 2026-03-31 at 6.03.41 PM.jpeg') }}" alt="Hydrocarbures" class="w-full h-[480px] object-cover hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-red-200 rounded-3xl -z-10"></div>
                     <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-red-100 rounded-2xl -z-10"></div>
